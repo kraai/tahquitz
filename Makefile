@@ -1,5 +1,5 @@
 default:
-	#
+	pdflatex tahquitz
 
 figures:
 	# The following requires Inkscape 0.47 or later.
@@ -9,3 +9,6 @@ figures:
 	# For better reliability in RIP, make png versions as well.
 	perl -e 'foreach my $$f(<*/*/figs/*.pdf>) {system("scripts/pdf_to_bitmap.pl $$f png $(FORCE)")}'
 	perl -e 'foreach my $$f(<share/misc/arrows/*.pdf>) {system("scripts/pdf_to_bitmap.pl $$f png $(FORCE)")}'
+
+clean:
+	rm -f *~ *.aux *.log *.idx *.toc *.ilg *.bak
