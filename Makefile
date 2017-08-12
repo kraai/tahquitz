@@ -17,4 +17,5 @@ figures:
 	perl -e 'foreach my $$f(<figs/*.svg>) {system("scripts/render_one_figure.pl $$f $(FORCE)")}'
 
 clean:
-	rm -f *~ *.aux *.log *.idx *.toc *.ilg *.bak topo.jpg
+	rm -f *~ *.aux *.log *.idx *.toc *.ilg *.bak *.toc topo.jpg
+
