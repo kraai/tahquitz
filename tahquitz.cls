@@ -9,7 +9,7 @@
 % works.
 
 %===============================================
-\usepackage{graphicx,url}
+\usepackage{graphicx,url,ifthen,wrapfig}
 %-----------------------------------
 \usepackage{geometry} % https://www.sharelatex.com/learn/Page_size_and_margins
 \geometry{margin=0.75in}
@@ -29,5 +29,10 @@
 \newcommand{\pitch}[1]{\textbf{P#1}.}
 \newcommand{\variation}[1]{\textit{Var #1\/}:}
 %===============================================
-\newcommand{\myfooter}{\hfill\footnotesize{Description by Ben Crowell, \url{github.com/bcrowell/tahquitz}}}
-\newcommand{\climb}[2]{\vfill\myfooter\pagebreak\section{#1 (#2)}}
+\newcommand{\myfooter}{\hfill\footnotesize{Ben Crowell, github.com/bcrowell/tahquitz}}
+\newcommand{\climb}[3][0]{\ifthenelse{\equal{#1}{1}}{}{\myfooter\vfill}\clearpage\section{#2 (#3)}}
+\newcommand{\topo}[2]{% #1=width as a fraction of textwidth, typically about 0.4
+  \begin{wrapfigure}{l}{#1\textwidth}
+    \includegraphics[width=\linewidth]{figs/#2}
+  \end{wrapfigure}
+}
