@@ -17,8 +17,9 @@
 \usepackage{tocloft}
 \renewcommand\numberline[1]{} % https://tex.stackexchange.com/questions/218663/remove-section-number-from-table-of-contents
 %===============================================
-\setlength{\parindent}{0pt}
-\parskip 0pt
+\newcommand{\normalparindent}{\setlength{\parindent}{0pt}\parskip 0pt}
+\newcommand{\discussionparindent}{\setlength{\parindent}{0pt}\parskip 4pt}
+\normalparindent
 \pagestyle{plain} % https://tex.stackexchange.com/questions/120746/removing-headers-keeping-page-numbers-in-the-same-time
 %-----------------------------------
 % https://stackoverflow.com/questions/38292590/remove-section-numbers-latex
@@ -37,3 +38,4 @@
     \includegraphics[width=\linewidth]{figs/#2}
   \end{wrapfigure}
 }
+\newenvironment{mytable}[1]{\vspace{3mm}\emph{#1}\\}{\vspace{3mm}}

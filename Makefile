@@ -2,7 +2,7 @@ SINGLE = 6
 # page number for "make single"
 
 default:
-	# Before doing this for the first time, do a "make figures".
+	make figures # renders any figure whose pdf is older than its svg
 	pdflatex tahquitz
 	pdflatex tahquitz
 
